@@ -1,0 +1,27 @@
+SELECT 
+o.code,
+o.status,
+o.total_price,
+GROUP_CONCAT(prod.name) as products_name ,
+c.name as client_name,
+us.name as cashier_name,
+us.id as cashier_id,
+d.name as department_name,
+
+o.created_at
+FROM orders o 
+Left join departments d 
+on d.id = o.department_id
+left join clients c 
+on c.id = o.client_id 
+left join order_products op 
+on op.order_id = o.id
+left join products prod 
+on prod.id = op.product_id
+left join users us 
+on us.id = o.user_id 
+WHERE  
+	 o.status = "failed_print"
+	AND	o.created_at >= CURDATE()
+  AND o.created_at < CURDATE() + INTERVAL 1 DAY
+ GROUP BY o.id;

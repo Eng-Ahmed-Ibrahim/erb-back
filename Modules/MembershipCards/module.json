@@ -1,0 +1,12 @@
+{
+    "name": "MembershipCards",
+    "alias": "membershipcards",
+    "description": "Officer membership cards management module for infantry officers and their families",
+    "keywords": ["membership", "cards", "nfc", "officers"],
+    "priority": 0,
+    "providers": [
+        "Modules\\MembershipCards\\App\\Providers\\MembershipCardsServiceProvider"
+    ],
+    "files": []
+}
+
