@@ -119,6 +119,7 @@ class UserController extends Controller
             'password' => $request->has('password') ? 'required|confirmed' : 'nullable',
             'department_id' => 'required|exists:departments,id',
             'reviewer' => 'nullable',
+            "user_type"=>"nullable"
         ]);
 
         $user = User::findOrFail($user_id);

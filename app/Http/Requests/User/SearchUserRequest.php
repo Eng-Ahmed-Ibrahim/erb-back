@@ -19,6 +19,7 @@ class SearchUserRequest extends ApiBaseRequest
             'username' => ['nullable', 'string'],
             'role' => ['nullable', 'integer', 'exists:roles,id'],
             'department_id' => 'nullable',
+            "user_type"=>'nullable'
         ];
     }
 }

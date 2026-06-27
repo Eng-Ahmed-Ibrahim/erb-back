@@ -27,6 +27,7 @@ class User extends Authenticatable implements Auditable
         'password',
         'image',
         'department_id',
+        'user_type'
     ];
 
     /**
