@@ -191,7 +191,7 @@ class EloquentOrderRepository extends EloquentBaseRepository implements OrderRep
             if ($data['status'] == 'closed') {
                 $model->user_id = auth()->user()->id;
                 $model->save();
-
+ 
                 $this->claculateOrderPrice($model);
 
                 PushOrderNotificationJob::dispatch($model);
